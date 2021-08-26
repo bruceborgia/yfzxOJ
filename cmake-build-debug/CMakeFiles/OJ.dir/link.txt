@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/OJ.dir/main.cpp.o -o OJ 

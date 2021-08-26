@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/aaa.dir/aaa.cpp.o CMakeFiles/aaa.dir/ccc.cpp.o CMakeFiles/aaa.dir/蔡.cpp.o -o aaa 

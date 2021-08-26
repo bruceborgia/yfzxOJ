@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/OJ1.dir/aaa.cpp.o -o OJ1 
