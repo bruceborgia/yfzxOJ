@@ -2,8 +2,6 @@
 #include "deque"
 #include "string"
 #include "algorithm"
-#include "stack"
-#include "vector"
 using namespace std;
 
 void check(char (&s1)[105], deque<int>&deq,int &flag){
@@ -33,11 +31,12 @@ void check(char (&s1)[105], deque<int>&deq,int &flag){
             if (push_num==1){
                 int num_of_1=deq.front();
                 if (num_of_1==0){
-                    deq.push_front(push_num);
+                    deq.push_front(1);
                     return;
                 }
-                deq.pop_front();
                 num_of_1++;
+                deq.pop_front();
+
                 deq.push_front(num_of_1);
             }
             else{
@@ -64,13 +63,13 @@ void check(char (&s1)[105], deque<int>&deq,int &flag){
             }
             if (!deq.empty()){//nnn=1-n,非空
                 int temp=deq.back();
-                deq.pop_front();
+                deq.pop_back();
                 if (temp==0&&!deq.empty()){
                     ans++;
                 }
-                deq.push_front(temp);
+                deq.push_back(temp);
             }
-            deq.push_front(nnn);
+            deq.push_back(nnn);
             printf("%d\n",ans&1);
         }
         else if (flag==0&&!deq.empty()){
@@ -104,7 +103,7 @@ void check(char (&s1)[105], deque<int>&deq,int &flag){
             cout<<"Invalid.\n";
         }
     }
-    else if (s1[1]='O'){
+    else if (s1[1]=='O'){
         if (deq.empty()){
             return;
         }
@@ -141,17 +140,21 @@ int main(){
 
     int casen,casenn;
     int case_count=1;
-    int flag=0;//0-正 1-反
-    deque<int>deq;
+
 
     cin>>casen;
     while(casen--) {
+        int flag=0;//0-正 1-反
+        deque<int>deq;
         scanf("%d", &casenn);
         cout << "Case #" << case_count++ << ":\n";
-        char s1[105];
+
         while (casenn--) {
+            char s1[105];
             scanf("%s", &s1);
             check(s1, deq, flag);
+
+
         }
     }
     return 0;

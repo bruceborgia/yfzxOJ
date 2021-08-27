@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/wyr/DL_learning/OJ/B.cpp
+/home/wyr/DL_learning/yfzxOJ/B.cpp
 iostream
-/home/wyr/DL_learning/OJ/iostream
+/home/wyr/DL_learning/yfzxOJ/iostream
 deque
-/home/wyr/DL_learning/OJ/deque
+/home/wyr/DL_learning/yfzxOJ/deque
 string
-/home/wyr/DL_learning/OJ/string
+/home/wyr/DL_learning/yfzxOJ/string
 algorithm
-/home/wyr/DL_learning/OJ/algorithm
+/home/wyr/DL_learning/yfzxOJ/algorithm
 stack
-/home/wyr/DL_learning/OJ/stack
+/home/wyr/DL_learning/yfzxOJ/stack
 vector
-/home/wyr/DL_learning/OJ/vector
+/home/wyr/DL_learning/yfzxOJ/vector
 

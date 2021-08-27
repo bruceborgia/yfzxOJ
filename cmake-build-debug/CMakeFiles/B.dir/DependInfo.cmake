@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wyr/DL_learning/OJ/B.cpp" "/home/wyr/DL_learning/OJ/cmake-build-debug/CMakeFiles/B.dir/B.cpp.o"
+  "/home/wyr/DL_learning/yfzxOJ/B.cpp" "/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/CMakeFiles/B.dir/B.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/wyr/DL_learning/OJ/main.cpp
+/home/wyr/DL_learning/yfzxOJ/main.cpp
 iostream
 -
 string.h
