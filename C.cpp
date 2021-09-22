@@ -1,10 +1,15 @@
 #include "iostream"
 #include "queue"
 using namespace std;
-
+const int MAXN = 150;
 
 int A,B,C;
+int cis[MAXN][MAXN];
 
+struct node{
+    int x,y;
+    string step;
+};
 void printop(int op)
 {
     switch (op) {
@@ -75,7 +80,12 @@ void op(int &a, int &b,, int op)//实际操作
             b = 0;
         }
     }
+}
 
+void bfs(node n)
+{
+    queue<node> q;
+    q.push(n);
 
 }
 
