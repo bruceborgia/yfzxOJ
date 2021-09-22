@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/163/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/164/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/163/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/164/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/wyr/DL_learning/yfzxOJ/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/163/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/164/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -78,7 +78,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/163/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/164/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -143,6 +143,19 @@ B/fast:
 .PHONY : B/fast
 
 #=============================================================================
+# Target rules for targets named C
+
+# Build rule for target.
+C : cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 C
+.PHONY : C
+
+# fast build rule for target.
+C/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/build
+.PHONY : C/fast
+
+#=============================================================================
 # Target rules for targets named A
 
 # Build rule for target.
@@ -203,6 +216,30 @@ B.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/B.dir/build.make CMakeFiles/B.dir/B.cpp.s
 .PHONY : B.cpp.s
 
+C.o: C.cpp.o
+.PHONY : C.o
+
+# target to build an object file
+C.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/C.cpp.o
+.PHONY : C.cpp.o
+
+C.i: C.cpp.i
+.PHONY : C.i
+
+# target to preprocess a source file
+C.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/C.cpp.i
+.PHONY : C.cpp.i
+
+C.s: C.cpp.s
+.PHONY : C.s
+
+# target to generate assembly for a file
+C.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/C.cpp.s
+.PHONY : C.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -237,6 +274,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... A"
 	@echo "... B"
+	@echo "... C"
 	@echo "... OJ"
 	@echo "... A.o"
 	@echo "... A.i"
@@ -244,6 +282,9 @@ help:
 	@echo "... B.o"
 	@echo "... B.i"
 	@echo "... B.s"
+	@echo "... C.o"
+	@echo "... C.i"
+	@echo "... C.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
