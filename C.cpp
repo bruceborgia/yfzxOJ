@@ -4,7 +4,8 @@ using namespace std;
 const int MAXN = 150;
 
 int A,B,C;
-int cis[MAXN][MAXN];
+int vis[MAXN][MAXN];//保存初始状态到状态(i,j)需要的步数
+int ans[MAXN][MAXN][MAXN];//保存初始状态到状态(i,j)的第k步的操作(0-6)
 
 struct node{
     int x,y;
