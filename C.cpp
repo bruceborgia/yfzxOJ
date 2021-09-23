@@ -1,105 +1,136 @@
 #include "iostream"
 #include "queue"
+#include "stdio.h"
+#include "string.h"
 using namespace std;
-const int MAXN = 150;
 
 int A,B,C;
-int vis[MAXN][MAXN];//保存初始状态到状态(i,j)需要的步数
-int ans[MAXN][MAXN][MAXN];//保存初始状态到状态(i,j)的第k步的操作(0-6)
+int status[105][105];//用来标记当前状态是否已经有过
 
 struct node{
-    int x,y;
-    string step;
-};
-void printop(int op)
+    int a,b;//两个容器中的水
+    int sa,sb;//上个状态
+    int way;//操作1-6
+    int step;//当前步数
+}status_tree[105][105];
+
+queue<node>q;
+
+void show(int a, int b)
 {
-    switch (op) {
-        case 0:{
-            cout<<"FILL(1)";
-            break;
-        }
-        case 1:{
-            cout<<"FILL(2)";
-            break;
-        }
-        case 2:{
-            cout<<"POUR(1,2)";
-            break;
-        }
-        case 3:{
-            cout<<"POUR(2,1)";
-            break;
-        }
-        case 4:{
-            cout<<"DROP(1)";
-            break;
-        }
-        case 5:{
-            cout<<"DROP(2)";
-            break;
-        }
+    if (status_tree[a][b].a==0 &&status_tree[a][b].b==0)//到达初始状态
+    {
+        return;
+    }
+    show(status_tree[a][b].sa,status_tree[a][b].sb);
+    switch (status_tree[a][b].way) {
+        case 1:cout<<"FILL(1)"<<endl;break;
+        case 2:cout<<"FILL(2)"<<endl;break;
+        case 3:cout<<"DROP(1)"<<endl;break;
+        case 4:cout<<"DROP(2)"<<endl;break;
+        case 5:cout<<"POUR(1,2)"<<endl;break;
+        case 6:cout<<"POUR(2,1)"<<endl;break;
     }
 }
 
-void op(int &a, int &b,, int op)//实际操作
-{
-    switch (op) {
-        case 0:{
-            a = A;
-            break;
-        }//将a倒满
-        case 1:{//将b倒满
-            b = B;
-            break;
-        }
-        case 2:{
-            if((b + a) <= B)//a中水全倒入b
-            {
-                b += a;
-                a = 0;
-            }
-            else{//a中一部分水倒入b，b即满，a非空
-                a -= (B - b);
-                b = B;
-            }
-        }
-        case 3:{
-            if((a + b) < A)//b中水全部倒入a，b空
-            {
-                a +=b;
-                b = 0;
-            }
-            else{//b中水一部分倒入a，a满，b非空
-                b -= (A-a);
-                a = A;
-            }
-        }
-        case 4:{//a倒空
-            a = 0;
-        }
-        case 5:{//b倒空
-            b = 0;
-        }
+void push(node d){//入队操作
+    if (status[d.a][d.b] == 0)//状态未有过
+    {
+        q.push(d);
+        status_tree[d.a][d.b] = d;
+        status[d.a][d.b] = 1;
     }
 }
 
-void bfs(node n)
-{
-    queue<node> q;
-    q.push(n);
+void bfs(){
+    q.push(status_tree[0][0]);
+    while (!q.empty()){
+        node u = q.front();
+        q.pop();
+        if (u.a == C || u.b ==C)
+        {
+            printf("%d\n",u.step);
+            show(u.a, u.b);
+            return;
+        }
+        node v;
+        v.sa = u.a;
+        v.sb = u.b;
+        v.step = u.step + 1;
 
+        if (u.a != A)//把1加满
+        {
+            v.a = A;
+            v.b = u.b;
+            v.way = 1;
+            push(v);
+        }
+
+        if (u.b != B)//把2加满
+        {
+            v.b = B;
+            v.a = u.a;
+            v.way = 2;
+            push(v);
+        }
+        if (u.a != 0)//倒光3
+        {
+            v.a = 0;
+            v.b = u.b;
+            v.way = 3;
+            push(v);
+        }
+        if (u.b != 0)//倒光4
+        {
+            v.b = 0;
+            v.a = u.a;
+            v.way = 4;
+            push(v);
+        }
+        if (u.a != 0 && u.b != B)//把1倒给2
+        {
+            if (u.a + u.b >= B)
+            {
+                v.b = B;
+                v.a = u.a + u.b -B;//v.a = u.a - (B - u.b) = u.a + u.b -B
+            }
+            else
+            {
+                v.a = 0;
+                v.b = u.a + u.b;
+            }
+            v.way = 5;
+            push(v);
+        }
+        if (u.a != A && u.b != 0)//把2倒给1
+        {
+            if (u.a + u.b >= A)
+            {
+                v.a = A;
+                v.b = u.a + u.b -A;//v.a = u.b - (B - u.a) = u.a + u.b -B
+            }
+            else
+            {
+                v.a = u.a + u.b;
+                v.b = 0;
+            }
+            v.way = 6;
+            push(v);
+        }
+    }
+    cout<<"impossible\n";
 }
 
 int main()
 {
-    int a, b, ta, tb, target;
-    cin>>ta;
-    cin>>tb;
-    cin>>target;
-    cout<<ta<<"\n";
-    cout<<tb<<"\n";
-    cout<<target<<"\n";
-    return 0;
+    memset(status, 0, sizeof(status));
+    status_tree[0][0].a = status_tree[0][0].b = 0;
+    status_tree[0][0].sa = status_tree[0][0].sb = -1;
+    status_tree[0][0].step = 0;
 
+    scanf("%d %d %d",&A,&B,&C);
+    bfs();
+    return 0;
 }
+
 
