@@ -1,6 +1,8 @@
 /home/wyr/DL_learning/yfzxOJ/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/wyr/DL_learning/yfzxOJ/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/CMakeFiles/D.dir
 /home/wyr/DL_learning/yfzxOJ/cmake-build-debug/CMakeFiles/OJ.dir
 /home/wyr/DL_learning/yfzxOJ/cmake-build-debug/CMakeFiles/B.dir
 /home/wyr/DL_learning/yfzxOJ/cmake-build-debug/CMakeFiles/C.dir
+/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/CMakeFiles/test.dir
 /home/wyr/DL_learning/yfzxOJ/cmake-build-debug/CMakeFiles/A.dir

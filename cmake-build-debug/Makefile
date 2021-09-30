@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named D
+
+# Build rule for target.
+D : cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 D
+.PHONY : D
+
+# fast build rule for target.
+D/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/D.dir/build.make CMakeFiles/D.dir/build
+.PHONY : D/fast
+
+#=============================================================================
 # Target rules for targets named OJ
 
 # Build rule for target.
@@ -154,6 +167,19 @@ C : cmake_check_build_system
 C/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/build
 .PHONY : C/fast
+
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 #=============================================================================
 # Target rules for targets named A
@@ -240,6 +266,30 @@ C.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/C.cpp.s
 .PHONY : C.cpp.s
 
+D.o: D.cpp.o
+.PHONY : D.o
+
+# target to build an object file
+D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/D.dir/build.make CMakeFiles/D.dir/D.cpp.o
+.PHONY : D.cpp.o
+
+D.i: D.cpp.i
+.PHONY : D.i
+
+# target to preprocess a source file
+D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/D.dir/build.make CMakeFiles/D.dir/D.cpp.i
+.PHONY : D.cpp.i
+
+D.s: D.cpp.s
+.PHONY : D.s
+
+# target to generate assembly for a file
+D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/D.dir/build.make CMakeFiles/D.dir/D.cpp.s
+.PHONY : D.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -264,6 +314,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OJ.dir/build.make CMakeFiles/OJ.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test.o: test.cpp.o
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -275,7 +349,9 @@ help:
 	@echo "... A"
 	@echo "... B"
 	@echo "... C"
+	@echo "... D"
 	@echo "... OJ"
+	@echo "... test"
 	@echo "... A.o"
 	@echo "... A.i"
 	@echo "... A.s"
@@ -285,9 +361,15 @@ help:
 	@echo "... C.o"
 	@echo "... C.i"
 	@echo "... C.s"
+	@echo "... D.o"
+	@echo "... D.i"
+	@echo "... D.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

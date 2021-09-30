@@ -37,6 +37,52 @@
 					<DistClean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="D">
+				<Option output="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/D" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 D"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="D/fast">
+				<Option output="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/D" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 D/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="OJ">
 				<Option output="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/OJ" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug"/>
@@ -175,6 +221,52 @@
 					<DistClean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="test">
+				<Option output="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test/fast">
+				<Option output="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 test/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="A">
 				<Option output="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug/A" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/wyr/DL_learning/yfzxOJ/cmake-build-debug"/>
@@ -231,8 +323,14 @@
 		<Unit filename="/home/wyr/DL_learning/yfzxOJ/C.cpp">
 			<Option target="C"/>
 		</Unit>
+		<Unit filename="/home/wyr/DL_learning/yfzxOJ/D.cpp">
+			<Option target="D"/>
+		</Unit>
 		<Unit filename="/home/wyr/DL_learning/yfzxOJ/main.cpp">
 			<Option target="OJ"/>
+		</Unit>
+		<Unit filename="/home/wyr/DL_learning/yfzxOJ/test.cpp">
+			<Option target="test"/>
 		</Unit>
 		<Unit filename="/home/wyr/DL_learning/yfzxOJ/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

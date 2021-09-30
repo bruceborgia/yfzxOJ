@@ -17,7 +17,7 @@ struct Dis{
     }
 };
 
-class Grapg_DG{
+class Graph_DG{
 private:
     int vexnum;//图的顶点个数
     int edge;//图的边数
@@ -25,9 +25,9 @@ private:
     Dis *dis;//记录各个顶点最短路径的信息
 public:
     //构造函数
-    Grapg_DG(int vexnum, int edge);
+    Graph_DG(int vexnum, int edge);
     //稀构函数
-    ~Grapg_DG();
+    ~Graph_DG();
     //判断我们每次输入的边的信息是否合法
     //顶点从1开始编号
     bool check_edge_value(int start, int end, int weight);
@@ -41,7 +41,7 @@ public:
     void print_path(int);
 };
 
-Grapg_DG::Grapg_DG(int vexnum, int edge) {
+Graph_DG::Graph_DG(int vexnum, int edge) {
     //初始化顶点数和边数
     this->vexnum = vexnum;
     this->edge = edge;
@@ -57,14 +57,14 @@ Grapg_DG::Grapg_DG(int vexnum, int edge) {
     }
 }
 
-Grapg_DG::~Grapg_DG() {
+Graph_DG::~Graph_DG() {
     delete[] dis;
     for (int i = 0; i < this->vexnum; ++i) {
         delete this->arc[i];
     }
 }
 
-bool Grapg_DG::check_edge_value(int start, int end, int weight) {
+bool Graph_DG::check_edge_value(int start, int end, int weight) {
     if (start < 1||end < 1||start > vexnum||end > vexnum||weight < 0)
     {
         return false;
@@ -72,7 +72,7 @@ bool Grapg_DG::check_edge_value(int start, int end, int weight) {
     return true;
 }
 
-void Grapg_DG::createGraph() {
+void Graph_DG::createGraph() {
     cout<<"请输入每条边的起点和终点，（顶点编号从1开始）以及其权重\n";
     int start;
     int end;
@@ -94,7 +94,7 @@ void Grapg_DG::createGraph() {
         ++count;
     }
 }
-void Grapg_DG::print() {
+void Graph_DG::print() {
     cout<<"图的邻接矩阵为：\n";
     int count_row = 0;//打印行的标签
     int count_col = 0;//打印列的标签
@@ -119,7 +119,7 @@ void Grapg_DG::print() {
     }
 }
 
-void Grapg_DG::Dijkstra(int begin) {
+void Graph_DG::Dijkstra(int begin) {
     //首先初始化我们的dis数组
     int i;
     for (int i = 0; i < this->vexnum; ++i) {
@@ -147,6 +147,11 @@ void Grapg_DG::Dijkstra(int begin) {
             }
         }
 
+        if(min == INT16_MAX)
+        {
+            break;
+        }
+
         //cout<<temp + 1<<" "<<min<<endl;
         //把temp对应的顶点加入到已经找到的最短路径的集合中
         dis[temp].visit = true;
@@ -163,7 +168,7 @@ void Grapg_DG::Dijkstra(int begin) {
     }
 }
 
-void Grapg_DG::print_path(int begin) {
+void Graph_DG::print_path(int begin) {
     string str;
     str = "v" + to_string(begin);
     cout<<"以"<<str<<"为起点的图的最短路径为:"<<endl;
@@ -182,6 +187,7 @@ void Grapg_DG::print_path(int begin) {
 //顶点数和边数的关系是：((Vexnun * (Vexnum - 1)) / 2) < edge
 bool check(int Vexnum, int edge)
 {
+    cout<<((Vexnum * (Vexnum - 1)) / 2);
     if (Vexnum <=0 || edge <= 0 || ((Vexnum * (Vexnum - 1)) / 2) < edge)
     {
         return false;
@@ -193,22 +199,28 @@ int main()
 {
     int vexnum;
     int edge;
-//    cout<<"输入图的顶点数和边的条数:\n";
-//    cin>>vexnum>>edge;
+    cout<<"输入图的顶点数和边的条数:\n";
+    cin>>vexnum>>edge;
 //    while (!check(vexnum,edge))
 //    {
 //        cout<<"输入的数值不合法，请重新输入\n";
 //        cin>>vexnum>>edge;
 //    }
-//
-//
-//    Grapg_DG graph(vexnum,edge);
-//    graph.createGraph();
-//    graph.print();
-//    graph.Dijkstra(1);
-//    graph.print_path(1);
-    int a = INT16_MAX;
-    cout<<a;
+
+
+    Graph_DG graph(vexnum,edge);
+    graph.createGraph();
+    graph.print();
+    graph.Dijkstra(2);
+    graph.print_path(2);
+    for (int i = 0; i < 4; ++i) {
+        graph.Dijkstra(i+1);
+        graph.print_path(i+1);
+    }
+
+
+
+
 
 
     return 0;
